@@ -24,6 +24,7 @@ jobs:
                 os:
                     - ubuntu-latest
                 jdl-file:
+                    - 21-points.jh
                     - blog.jh
                     - bootiful-music.jh
                     - bug-tracker.jh
@@ -97,6 +98,10 @@ jobs:
 
             - name: Project information
               run: jhipster info
+              working-directory: ../app
+
+            - name: Folder information
+              run: ls -la
               working-directory: ../app
 
             #----------------------------------------------------------------------
