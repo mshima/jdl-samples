@@ -99,7 +99,10 @@ jobs:
             - name: Folder information
               run: ls -la
               working-directory: ../app
-
+            - uses: actions/upload-artifact@v2
+              with:	
+                  name: application	
+                  path: ${{ github.workspace }}/../app
             #----------------------------------------------------------------------
             # Tests
             #----------------------------------------------------------------------
