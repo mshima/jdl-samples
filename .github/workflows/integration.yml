@@ -122,7 +122,7 @@ jobs:
               working-directory: ../app
 
             - name: Frontend tests
-              run: npm ci:frontend:test
+              run: npm run ci:frontend:test
               working-directory: ../app
 
             - name: Backend info
