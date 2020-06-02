@@ -69,11 +69,7 @@ jobs:
             # Create Application folder
             #----------------------------------------------------------------------
             - name: Create application folder
-              run: |
-                   mkdir app
-                   pwd
-                   cd app
-                   pwd
+              run: mkdir app
  
             #----------------------------------------------------------------------
             # Copy jdl file
@@ -87,6 +83,10 @@ jobs:
             #----------------------------------------------------------------------
             - name: Project generation
               run: jhipster import-jdl ${{ matrix.jdl-file }} --no-insight --blueprints scripts --skip-install ${{ matrix.additional-parameters }}
+              working-directory: app
+
+            - name: Package lock
+              run: npm --package-lock-only
               working-directory: app
 
             - name: Package.json information
@@ -106,7 +106,7 @@ jobs:
 
             - uses: actions/upload-artifact@v2
               with:	
-                  name: application	
+                  name: ${{ matrix.jdl-file }}_${{ matrix.jhi-gen-version }}
                   path: app
  
             #----------------------------------------------------------------------
