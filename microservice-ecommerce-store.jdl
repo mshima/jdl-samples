@@ -182,7 +182,7 @@ microservice Notification with notification
 deployment {
    deploymentType docker-compose,
    appsFolders [store, invoice, notification],
-   dockerRepositoryName "mydocker"
+   dockerRepositoryName "hipsterslabs"
    monitoring no,
    serviceDiscoveryType eureka
 }
