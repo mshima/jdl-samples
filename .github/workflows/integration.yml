@@ -133,7 +133,7 @@ jobs:
 
             - name: Backend test
               if: ${{ steps.backend_info.outcome == 'success' && always() }}
-              run: npm run backend:test
+              run: npm run ci:backend:test
               working-directory: ../app
 
             - name: Packaging
