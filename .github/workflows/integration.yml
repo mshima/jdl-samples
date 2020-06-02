@@ -82,11 +82,7 @@ jobs:
             # Generate project
             #----------------------------------------------------------------------
             - name: Project generation
-              run: jhipster import-jdl ${{ matrix.jdl-file }} --no-insight --blueprints scripts --skip-install ${{ matrix.additional-parameters }}
-              working-directory: app
-
-            - name: Package lock
-              run: npm install --package-lock-only
+              run: jhipster import-jdl ${{ matrix.jdl-file }} --no-insight --blueprints scripts ${{ matrix.additional-parameters }}
               working-directory: app
 
             - name: Package.json information
@@ -103,11 +99,6 @@ jobs:
             - name: Folder information
               run: ls -la
               working-directory: app
-
-            - uses: actions/upload-artifact@v2
-              with:	
-                  name: ${{ matrix.jdl-file }}
-                  path: app
  
             #----------------------------------------------------------------------
             # Tests
