@@ -86,7 +86,7 @@ jobs:
               working-directory: app
 
             - name: Package lock
-              run: npm --package-lock-only
+              run: npm install --package-lock-only
               working-directory: app
 
             - name: Package.json information
