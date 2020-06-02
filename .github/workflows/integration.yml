@@ -86,7 +86,7 @@ jobs:
             # Generate project
             #----------------------------------------------------------------------
             - name: Project generation
-              run: jhipster import-jdl ${{ matrix.jdl-file }} --no-insight --blueprints scripts ${{ matrix.additional-parameters }}
+              run: jhipster import-jdl ${{ matrix.jdl-file }} --no-insight --blueprints scripts --skip-install ${{ matrix.additional-parameters }}
               working-directory: app
 
             - name: Package.json information
