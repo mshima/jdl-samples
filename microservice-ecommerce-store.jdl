@@ -178,3 +178,11 @@ enum NotificationType {
 }
 
 microservice Notification with notification
+
+deployment {
+   deploymentType docker-compose,
+   appsFolders [store, invoice, notification],
+   dockerRepositoryName "mydocker"
+   monitoring no,
+   serviceDiscoveryType eureka
+}
