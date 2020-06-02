@@ -73,7 +73,7 @@ jobs:
             # Install scripts blueprint
             #----------------------------------------------------------------------
             - name: Install scripts blueprint
-              run: npm install -g mshima/generator-jhipster-scripts#microservice
+              run: npm install -g mshima/generator-jhipster-scripts#workspace
 
             #----------------------------------------------------------------------
             # Copy jdl file
