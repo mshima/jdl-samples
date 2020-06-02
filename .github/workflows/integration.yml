@@ -90,7 +90,7 @@ jobs:
 
             - name: Package.json information
               run: |
-                  cat package.json || jhipster workspace --force
+                  cat package.json || jhipster workspace --force --blueprints scripts
                   cat package.json || true
                   cat */package.json || true
               working-directory: ../app
